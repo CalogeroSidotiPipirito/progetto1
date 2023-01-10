@@ -6,22 +6,16 @@ import java.util.HashMap;
 
 public class Classifica {
 
-    private static HashMap<String, int> classifica = new HashMap<String, int>();
-    private static ArrayList<String> squadre = new ArrayList<>();
-
-    private SecureRandom n = new SecureRandom();
+    private static HashMap<String, Integer> classifica = new HashMap<String, Integer>();
+    private static SecureRandom n = new SecureRandom();
 
 
     public static void aggiungiSquadraConPunti(Squadra squadra) {
-        for (int i = 0; i < squadre.size(); i++) {
-            if (squadre.contains(squadra.getNome()))
-                ;
-            else {
-                squadre.add(squadra.getNome());
-                int puntiSquadra = n.nextInt(90);
-                classifica.put(squadra.getNome(), n.nextInt(90));
+        if (classifica.containsKey(squadra.getNome()))
+            ;
+        else {
+            classifica.put(squadra.getNome(), n.nextInt(90));
 
-            }
         }
     }
 
