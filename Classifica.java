@@ -1,7 +1,6 @@
 package progetto1;
 
 import java.security.SecureRandom;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Classifica {
