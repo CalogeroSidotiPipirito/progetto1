@@ -1,14 +1,18 @@
 package progetto1;
 
-public class Calciatore {
+enum Ruolo {Portiere, Difensore, Centrocampista, Attaccante}; //enumerate type - role player
 
-    private final String nome;
-    private final String cognome;
 
-    private String ruolo;
-    private int eta;
+public class Calciatore { //class containing biographical data of player
 
-    public Calciatore(String nome, String cognome, String ruolo, int eta){
+    private final String nome; //player name
+    private final String cognome; //player surname
+
+    private Ruolo ruolo; //player role
+
+    private int eta; //age
+
+    public Calciatore(String nome, String cognome, Ruolo ruolo, int eta){ //constructor of class Calciatore
         this.nome = nome;
         this.cognome = cognome;
         this.ruolo = ruolo;
@@ -23,7 +27,7 @@ public class Calciatore {
         return cognome;
     }
 
-    public String getRuolo(){
+    public Ruolo getRuolo(){
         return ruolo;
     }
 
@@ -31,12 +35,12 @@ public class Calciatore {
         return eta;
     }
 
-    public void setRuolo(String ruolo){
-        this.ruolo = ruolo;
-    }
-
     public void setEta(int eta){
         this.eta = eta;
+    }
+
+    public void cambiaRuolo(Ruolo ruolo){
+        this.ruolo = ruolo;
     }
 
 
